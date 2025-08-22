@@ -28,6 +28,8 @@ ggplot(data = pie_crab,
        y = "Size")
 ```
 
+## Final doc
+
 ```{r}
 
 crab_table <- pie_crab %>% 
@@ -38,8 +40,7 @@ crab_table <- pie_crab %>%
   kable(col.names = c("Site", "Mean", "Standard Deviation", "Sample Size")) %>% 
   kable_styling(bootstrap_options = "striped", full_width = FALSE)
 
-```
-
-```{r}
+crab_table
 
 ```
+
