@@ -13,6 +13,7 @@ echo: FALSE
 #| include: false
 library(lterdatasampler)
 library(tidyverse)
+library(kableExtra)
 ```
 
 ```{r}
@@ -28,9 +29,13 @@ ggplot(data = pie_crab,
 ```
 
 ```{r}
-pie_crab %>% 
+
+crab_table <- pie_crab %>% 
   group_by(site) %>% 
   summarize(mean =round(mean(size),2),
                   sd = round(sd(size), 2),
-                  sample_size = n())
+                  sample_size = n()) %>% 
+  kable(col.names = c("Site", "Mean", "Standard Deviation", "Sample Size")) %>% 
+  kable_styling(bootstrap_options = "striped", full_width = FALSE)
+
 ```
