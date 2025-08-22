@@ -17,15 +17,15 @@ library(kableExtra)
 ```
 
 ```{r}
+
 #| fig-cap: "this is my caption"
+
 ggplot(data = pie_crab,
        aes(x = latitude, y = size)) +
   geom_jitter() +
   labs(title = "Fiddler crab graph",
        x = "Latitude",
        y = "Size")
-
-
 ```
 
 ```{r}
@@ -38,6 +38,4 @@ crab_table <- pie_crab %>%
   kable(col.names = c("Site", "Mean", "Standard Deviation", "Sample Size")) %>% 
   kable_styling(bootstrap_options = "striped", full_width = FALSE)
 
-crab_table
-  
 ```
