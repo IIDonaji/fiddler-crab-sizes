@@ -2,8 +2,29 @@
 title: "Crab Size"
 format: html
 editor: visual
+editor_options: 
+  chunk_output_type: console
 ---
+
 ## Fiddler crab body size in salt marshes from Florida to Massachusetts, USA at PIE and VCR LTER and NOAA NERR sites during summer 201
+
 ```{r}
 library(lterdatasampler)
+library(tidyverse)
+```
+
+```{r}
+
+ggplot(data = pie_crab,
+       aes(x = latitude, y = size)) +
+  geom_jitter() +
+  labs(title = "Fiddler crab graph",
+       x = "Latitude",
+       y = "Size")
+
+```
+
+```{r}
+
+  
 ```
