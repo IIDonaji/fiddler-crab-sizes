@@ -34,3 +34,7 @@ pie_crab %>%
                   sd = round(sd(size), 2),
                   sample_size = n())
 ```
+
+```{r}
+
+```
