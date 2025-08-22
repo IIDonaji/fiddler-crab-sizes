@@ -4,17 +4,19 @@ format: html
 editor: visual
 editor_options: 
   chunk_output_type: console
+echo: FALSE
 ---
 
 ## Fiddler crab body size in salt marshes from Florida to Massachusetts, USA at PIE and VCR LTER and NOAA NERR sites during summer 201
 
 ```{r}
+#| include: false
 library(lterdatasampler)
 library(tidyverse)
 ```
 
 ```{r}
-
+#| fig-cap: "this is my caption"
 ggplot(data = pie_crab,
        aes(x = latitude, y = size)) +
   geom_jitter() +
@@ -22,8 +24,14 @@ ggplot(data = pie_crab,
        x = "Latitude",
        y = "Size")
 
+
 ```
 
 ```{r}
-
+pie_crab %>% 
+  group_by(site) %>% 
+  summarize(mean =round(mean(size),2),
+                  sd = round(sd(size), 2),
+                  sample_size = n())
+  
 ```
