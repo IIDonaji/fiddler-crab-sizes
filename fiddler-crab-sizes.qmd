@@ -17,7 +17,13 @@ library(tidyverse)
 
 ggplot(data = pie_crab,
        aes(x = latitude, y = size)) +
-  geom_jitter()
+  geom_jitter() +
+  labs(title = "Fiddler crab graph",
+       x = "Latitude",
+       y = "Size")
 
 ```
 
+```{r}
+
+```
